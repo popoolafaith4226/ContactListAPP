@@ -2,13 +2,14 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from ActionPages.action_pages import login_pages, signup_button
+from ActionPages.action_pages import login_pages, signup_button, first_name, last_name, email, password, submit_button, \
+    Add_contact_button, Add_contact_first_name, Add_contact_last_name, Add_contact_DOB
 from Config.config import Config
 
 @pytest.fixture(scope="module")
 def driver_setup():
     chrome_options = Options()
-    chrome_options.add_argument("--headless")  # Run Chrome in headless mode
+    # chrome_options.add_argument("--headless")  # Run Chrome in headless mode
     chrome_options.add_argument("--disable-gpu")  # Disable GPU acceleration (to avoid errors in headless mode)
     driver = webdriver.Chrome(options=chrome_options)
     driver.implicitly_wait(30)
@@ -33,4 +34,41 @@ def login(driver_setup):
 def test_sign_up_page(signup):
     the_signup_button = signup_button(signup.driver)
     the_signup_button.click_signup_button()
+
+def test_first_name(signup):
+    the_firstname_field = first_name(signup.driver)
+    the_firstname_field.input_first_name(Config.FIRSTNAME)
+
+def test_last_name(signup):
+    the_lastname_field = last_name(signup.driver)
+    the_lastname_field.input_last_name(Config.LASTNAME)
+
+def test_email_field(signup):
+    the_email_field = email(signup.driver)
+    the_email_field.input_email(Config.EMAIL)
+
+def test_password_field(signup):
+    the_password_field = password(signup.driver)
+    the_password_field.input_password(Config.PASSWORD)
+
+def test_submit_signup_button(signup):
+    the_submit_button = submit_button(signup.driver)
+    the_submit_button.click_submit_button()
+
+def test_add_contact_button(signup):
+    the_add_contact_button = Add_contact_button(signup.driver)
+    the_add_contact_button.click_add_contact_button()
+
+def test_contact_firstname(signup):
+    the_firstname_field = Add_contact_first_name(signup.driver)
+    the_firstname_field.Contact_first_name(Config.CONTACT_FIRSTNAME)
+
+def test_contact_lastname(signup):
+    the_lastname_field = Add_contact_last_name(signup.driver)
+    the_lastname_field.Contact_last_name(Config.CONTACT_LASTNAME)
+
+def test_contact_dob(signup):
+    the_dob_field = Add_contact_DOB(signup.driver)
+    the_dob_field.Contact_dateofbirth(Config.CONTACT_DATE_OF_BIRTH)
+
 
