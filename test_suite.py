@@ -3,7 +3,9 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 from ActionPages.action_pages import login_pages, signup_button, first_name, last_name, email, password, submit_button, \
-    Add_contact_button, Add_contact_first_name, Add_contact_last_name, Add_contact_DOB
+    Add_contact_button, Add_contact_first_name, Add_contact_last_name, Add_contact_DOB, Add_contact_email, \
+    Add_contact_phone, AddContactAddress1, AddContactCity, AddContactState, AddContactCountry, CLickSubmitButton, \
+    AddContactAddress2
 from Config.config import Config
 
 @pytest.fixture(scope="module")
@@ -30,6 +32,18 @@ def login(driver_setup):
     login_page = login_pages(driver)
     login_page.login_url(Config.BASEURL)
     return login_page
+#
+# def test_username(signup):
+#     the_username_field = login_pages(signup.driver)
+#     the_username_field.enter_username(Config.LOGIN_USERNAME)
+#
+# def test_password(signup):
+#     the_password_field = login_pages(signup.driver)
+#     the_password_field.enter_password(Config.LOGIN_PASSWORD)
+#
+# def test_login_button (signup):
+#     click_the_login_button = login_pages(signup.driver)
+#     click_the_login_button.click_login_button()
 
 def test_sign_up_page(signup):
     the_signup_button = signup_button(signup.driver)
@@ -71,4 +85,37 @@ def test_contact_dob(signup):
     the_dob_field = Add_contact_DOB(signup.driver)
     the_dob_field.Contact_dateofbirth(Config.CONTACT_DATE_OF_BIRTH)
 
+def test_contact_email(signup):
+    the_email_field = Add_contact_email(signup.driver)
+    the_email_field.Contact_email(Config.CONTACT_EMAIL)
 
+def test_contact_phone(signup):
+    the_phone_field = Add_contact_phone(signup.driver)
+    the_phone_field.contact_phone(Config.CONTACT_PHONE)
+
+def test_contact_address1(signup):
+    the_address1_field = AddContactAddress1(signup.driver)
+    the_address1_field.contact_address1(Config.CONTACT_ADDRESS_1)
+
+def test_contact_address2(signup):
+    the_address2_field = AddContactAddress2(signup.driver)
+    the_address2_field.contact_address2(Config.CONTACT_ADDRESS_2)
+
+def test_contact_city(signup):
+    the_city_field = AddContactCity(signup.driver)
+    the_city_field.contact_city(Config.CONTACT_CITY)
+
+def test_contact_state(signup):
+    the_state_field = AddContactState(signup.driver)
+    the_state_field.contact_state(Config.CONTACT_STATE)
+
+def test_contact_postalcode(signup):
+
+
+def test_contact_country(signup):
+    the_country_field = AddContactCountry(signup.driver)
+    the_country_field.contact_country(Config.CONTACT_COUNTRY)
+
+def test_submit_button(signup):
+    the_submit_button = CLickSubmitButton(signup.driver)
+    the_submit_button.click_submit_button()

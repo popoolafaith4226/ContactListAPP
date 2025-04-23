@@ -7,7 +7,30 @@ from selenium.webdriver.support import expected_conditions as EC
 from Loginlocators.locator import Click_signup_button, Login_locators, Add_new_contact
 
 
+class login_pages:
+    def __init__(self,driver):
+        self.driver = driver
+
+    def login_url(self, url):
+        self.driver.get(url)
+
+    def enter_username(self, user_name):
+        username = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located(Login_locators.USERNAME))
+        username.send_keys(user_name)
+
+    def enter_password(self, user_password):
+        enter_password = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located(Login_locators.PASSWORD))
+        enter_password.send_keys(user_password)
+
+    def click_login_button(self):
+        click_login_button = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located(Login_locators.LOGIN_BUTTON))
+        click_login_button.click()
+
 class signup_button:
+
     def __init__(self, driver):
         self.driver = driver
 
@@ -110,17 +133,96 @@ class Add_contact_DOB:
         input_contact_birthdate.send_keys(add_birthdate)
         time.sleep(3)
 
-
-
-
-class login_pages:
-    def __init__(self,driver):
+class Add_contact_email:
+    def __init__(self, driver):
         self.driver = driver
 
-    def login_url(self, url):
-        self.driver.get(url)
+    def Contact_email(self, add_email):
+        input_contact_email = WebDriverWait(self.driver, 20).until(
+            EC.element_to_be_clickable(Add_new_contact.Contact_Email))
+        input_contact_email.send_keys(add_email)
+        time.sleep(3)
 
-    def enter_firstname(self, user_name):
-        username = WebDriverWait(self.driver, 20).until(
-            EC.presence_of_element_located(Login_locators.USERNAME))
-        username.send_keys(user_name)
+class Add_contact_phone:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def contact_phone(self, add_phone):
+        input_contact_phone = WebDriverWait(self.driver, 20).until(
+            EC.element_to_be_clickable(Add_new_contact.Contact_phone))
+        input_contact_phone.send_keys(add_phone)
+        time.sleep(3)
+
+class AddContactAddress1:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def contact_address1(self, add_address1):
+        input_contact_address1 = WebDriverWait(self.driver, 20).until(
+            EC.element_to_be_clickable(Add_new_contact.Contact_Street_address1))
+        input_contact_address1.send_keys(add_address1)
+        time.sleep(3)
+
+class AddContactAddress2:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def contact_address2(self, add_address2):
+        input_contact_address2 = WebDriverWait(self.driver, 20).until(
+            EC.element_to_be_clickable(Add_new_contact.Contact_Street_address2))
+        input_contact_address2.send_keys(add_address2)
+        time.sleep(3)
+
+
+class AddContactCity:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def contact_city(self, add_city):
+        input_contact_city = WebDriverWait(self.driver, 20).until(
+            EC.element_to_be_clickable(Add_new_contact.Contact_city))
+        input_contact_city.send_keys(add_city)
+        time.sleep(3)
+
+class AddContactState:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def contact_state(self, add_state):
+        input_contact_city = WebDriverWait(self.driver, 20).until(
+            EC.element_to_be_clickable(Add_new_contact.Contact_State))
+        input_contact_city.send_keys(add_state)
+        time.sleep(3)
+
+class AddContactPostalCode:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def contact_postal_code(self, add_postalcode):
+        input_contact_postalcode = WebDriverWait(self.driver, 20).until(
+            EC.element_to_be_clickable(Add_new_contact.Contact_Postalcode))
+        input_contact_postalcode.send_keys(add_postalcode)
+        time.sleep(3)
+
+class AddContactCountry:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def contact_country(self, add_country):
+        input_contact_country = WebDriverWait(self.driver, 20).until(
+            EC.element_to_be_clickable(Add_new_contact.Contact_Country))
+        input_contact_country.send_keys(add_country)
+        time.sleep(3)
+
+class CLickSubmitButton:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def click_submit_button(self):
+        click_submit_button = WebDriverWait(self.driver, 20).until(
+            EC.element_to_be_clickable(Add_new_contact.Contact_submit_button))
+        click_submit_button.click()
+        time.sleep(3)
+
+
+
