@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from ActionPages.action_pages import login_pages, signup_button, first_name, last_name, email, password, submit_button, \
     Add_contact_button, Add_contact_first_name, Add_contact_last_name, Add_contact_DOB, Add_contact_email, \
     Add_contact_phone, AddContactAddress1, AddContactCity, AddContactState, AddContactCountry, CLickSubmitButton, \
-    AddContactAddress2
+    AddContactAddress2, AddContactPostalCode
 from Config.config import Config
 
 @pytest.fixture(scope="module")
@@ -110,6 +110,8 @@ def test_contact_state(signup):
     the_state_field.contact_state(Config.CONTACT_STATE)
 
 def test_contact_postalcode(signup):
+    the_postalcode_field = AddContactPostalCode(signup.driver)
+    the_postalcode_field.contact_postal_code(Config.CONTACT_POSTCODE)
 
 
 def test_contact_country(signup):
