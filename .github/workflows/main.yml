@@ -1,0 +1,41 @@
+
+name: Python Tests  # this is my project name
+
+on:
+  push:
+    branches: #push to the available branch
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest # or linux
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'  # Specify your Python version here
+
+      - name: Install dependencies
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install -r requirements.txt # 
+          pip install pytest pytest-html
+      - name: Run tests
+        run: |
+          source .venv/bin/activate # enter the virtual env
+          pytest --html=report.html -p no:warnings # removes all warnings
+          
+      - name: Upload HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-report
+          path: report.html
