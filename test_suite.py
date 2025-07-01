@@ -54,6 +54,7 @@ def test_first_name(signup):
     the_firstname_field = first_name(signup.driver)
     the_firstname_field.input_first_name(Config.FIRSTNAME)
 
+# test the lastname
 def test_last_name(signup):
     the_lastname_field = last_name(signup.driver)
     the_lastname_field.input_last_name(Config.LASTNAME)
