@@ -11,8 +11,8 @@ from Config.config import Config
 @pytest.fixture(scope="module")
 def driver_setup():
     chrome_options = Options()
-    # chrome_options.add_argument("--headless")  # Run Chrome in headless mode
-    chrome_options.add_argument("--disable-gpu")  # Disable GPU acceleration (to avoid errors in headless mode)
+    chrome_options.add_argument("--headless")  # Run Chrome in headless mode
+    # chrome_options.add_argument("--disable-gpu")  # Disable GPU acceleration (to avoid errors in headless mode)
     driver = webdriver.Chrome(options=chrome_options)
     driver.implicitly_wait(30)
     driver.maximize_window()
@@ -33,7 +33,7 @@ def login(driver_setup):
     login_page.login_url(Config.BASEURL)
     return login_page
 #
-# def test_username(signup):
+# def test_username(signup): this is test
 #     the_username_field = login_pages(signup.driver)
 #     the_username_field.enter_username(Config.LOGIN_USERNAME)
 #
