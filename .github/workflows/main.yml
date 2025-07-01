@@ -1,9 +1,8 @@
-
-name: Python Tests  # this is my project name
+name: Python Tests
 
 on:
   push:
-    branches: #push to the available branch
+    branches:
       - main
   pull_request:
     branches:
@@ -11,28 +10,46 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest # or linux
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.12'  # Specify your Python version here
+          python-version: '3.12'
+
+      # Install Chrome browser
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@latest
+
+      # Install ChromeDriver
+      - name: Install ChromeDriver
+        uses: nanasess/setup-chromedriver@master
+
+      # Verify Chrome and ChromeDriver installation
+      - name: Verify Chrome installation
+        run: |
+          google-chrome --version
+          chromedriver --version
 
       - name: Install dependencies
         run: |
           python -m venv .venv
           source .venv/bin/activate
-          pip install -r requirements.txt # 
-          pip install pytest pytest-html
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
       - name: Run tests
         run: |
-          source .venv/bin/activate # enter the virtual env
-          pytest --html=report.html -p no:warnings # removes all warnings
-          
+          source .venv/bin/activate
+          pytest --html=report.html -p no:warnings
+        env:
+          # Set display for headless Chrome
+          DISPLAY: :99
+
       - name: Upload HTML report
         if: always()
         uses: actions/upload-artifact@v4
