@@ -1,6 +1,6 @@
 class Config:
     BASEURL = "https://thinking-tester-contact-list.herokuapp.com/"
-    LOGIN_USERNAME = "bobo23@sharklasers.com"
+    LOGIN_USERNAME = "bobo2r3@sharklasers.com"
     LOGIN_PASSWORD = "Abcd1234#"
     FIRSTNAME = "JOHN"
     LASTNAME = "HASSAN"
