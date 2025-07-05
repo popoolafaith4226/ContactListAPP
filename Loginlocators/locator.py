@@ -28,6 +28,8 @@ class Add_new_contact:
     Contact_Postalcode = (By.XPATH, '//*[@id="postalCode"]')
     Contact_Country = (By.XPATH, '//*[@id="country"]')
     Contact_submit_button = (By.XPATH, '//*[@id="submit"]')
+    Contact_logout_button = (By.XPATH, '//*[@id="logout"]')
+
 
 
 

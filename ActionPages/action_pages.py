@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from Loginlocators.locator import Click_signup_button, Login_locators, Add_new_contact
 
 
-class login_pages:
+class LoginPages:
     def __init__(self,driver):
         self.driver = driver
 
@@ -29,7 +29,7 @@ class login_pages:
             EC.presence_of_element_located(Login_locators.LOGIN_BUTTON))
         click_login_button.click()
 
-class signup_button:
+class SignupButton:
 
     def __init__(self, driver):
         self.driver = driver
@@ -40,7 +40,7 @@ class signup_button:
         click_the_signup_button.click()
         time.sleep(3)
 
-class first_name:
+class FirstName:
     def __init__(self, driver):
         self.driver = driver
 
@@ -50,7 +50,7 @@ class first_name:
         click_firstname_field.send_keys(user_first_name)
         time.sleep(3)
 
-class last_name:
+class LastName:
     def __init__(self, driver):
         self.driver = driver
 
@@ -61,7 +61,7 @@ class last_name:
         time.sleep(3)
 
 
-class email:
+class Email:
     def __init__(self, driver):
         self.driver = driver
 
@@ -71,7 +71,7 @@ class email:
         input_last_name.send_keys(user_email)
         time.sleep(3)
 
-class password:
+class Password:
     def __init__(self, driver):
         self.driver = driver
 
@@ -81,7 +81,7 @@ class password:
         input_the_password.send_keys(user_password)
         time.sleep(3)
 
-class submit_button:
+class SubmitButton:
     def __init__(self, driver):
         self.driver = driver
 
@@ -91,7 +91,7 @@ class submit_button:
         click_the_submit_button.click()
         time.sleep(3)
 
-class Add_contact_button:
+class AddContactButton:
     def __init__(self, driver):
         self.driver = driver
 
@@ -101,49 +101,49 @@ class Add_contact_button:
         click_contact_button.click()
         time.sleep(3)
 
-class Add_contact_first_name:
+class AddContactFirstName:
     def __init__(self, driver):
         self.driver = driver
 
 
-    def Contact_first_name(self, add_firstname):
+    def contact_first_name(self, add_firstname):
         input_contact_firstname = WebDriverWait(self.driver, 20).until(
             EC.element_to_be_clickable(Add_new_contact.Contact_first_name))
         input_contact_firstname.send_keys(add_firstname)
         time.sleep(3)
 
-class Add_contact_last_name:
+class AddContactLastName:
     def __init__(self, driver):
         self.driver = driver
 
-    def Contact_last_name(self, add_lastname):
+    def contact_last_name(self, add_lastname):
         input_contact_firstname = WebDriverWait(self.driver, 20).until(
             EC.element_to_be_clickable(Add_new_contact.Contact_last_name))
         input_contact_firstname.send_keys(add_lastname)
         time.sleep(3)
 
-class Add_contact_DOB:
+class AddContactDOB:
     def __init__(self, driver):
         self.driver = driver
 
 
-    def Contact_dateofbirth(self, add_birthdate):
+    def contact_date_of_birth(self, add_birthdate):
         input_contact_birthdate = WebDriverWait(self.driver, 20).until(
             EC.element_to_be_clickable(Add_new_contact.Contact_DOB))
         input_contact_birthdate.send_keys(add_birthdate)
         time.sleep(3)
 
-class Add_contact_email:
+class AddContactEmail:
     def __init__(self, driver):
         self.driver = driver
 
-    def Contact_email(self, add_email):
+    def contact_email(self, add_email):
         input_contact_email = WebDriverWait(self.driver, 20).until(
             EC.element_to_be_clickable(Add_new_contact.Contact_Email))
         input_contact_email.send_keys(add_email)
         time.sleep(3)
 
-class Add_contact_phone:
+class AddContactPhone:
     def __init__(self, driver):
         self.driver = driver
 
@@ -226,3 +226,12 @@ class CLickSubmitButton:
 
 
 
+class LogOutButton:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def click_logout_button(self):
+        click_logout_button = WebDriverWait(self.driver, 20).until(
+            EC.element_to_be_clickable(Add_new_contact.Contact_logout_button))
+        click_logout_button.click()
+        time.sleep(3)
