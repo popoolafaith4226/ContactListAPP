@@ -30,7 +30,6 @@ class LoginPages:
         click_login_button.click()
 
 class SignupButton:
-
     def __init__(self, driver):
         self.driver = driver
 
