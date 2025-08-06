@@ -39,9 +39,7 @@ class SignupButton:
         click_the_signup_button.click()
         time.sleep(3)
 
-class FirstName:
-    def __init__(self, driver):
-        self.driver = driver
+
 
     def input_first_name(self, user_first_name):
         click_firstname_field = WebDriverWait(self.driver, 20).until(
@@ -49,9 +47,7 @@ class FirstName:
         click_firstname_field.send_keys(user_first_name)
         time.sleep(3)
 
-class LastName:
-    def __init__(self, driver):
-        self.driver = driver
+
 
     def input_last_name(self,user_last_name):
         input_last_name= WebDriverWait(self.driver, 20).until(
@@ -60,9 +56,6 @@ class LastName:
         time.sleep(3)
 
 
-class Email:
-    def __init__(self, driver):
-        self.driver = driver
 
     def input_email(self, user_email):
         input_last_name = WebDriverWait(self.driver, 20).until(
@@ -70,9 +63,7 @@ class Email:
         input_last_name.send_keys(user_email)
         time.sleep(3)
 
-class Password:
-    def __init__(self, driver):
-        self.driver = driver
+
 
     def input_password(self, user_password):
         input_the_password = WebDriverWait(self.driver, 20).until(
@@ -80,9 +71,7 @@ class Password:
         input_the_password.send_keys(user_password)
         time.sleep(3)
 
-class SubmitButton:
-    def __init__(self, driver):
-        self.driver = driver
+
 
     def click_submit_button(self):
         click_the_submit_button = WebDriverWait(self.driver, 20).until(
@@ -100,9 +89,7 @@ class AddContactButton:
         click_contact_button.click()
         time.sleep(3)
 
-class AddContactFirstName:
-    def __init__(self, driver):
-        self.driver = driver
+
 
 
     def contact_first_name(self, add_firstname):
@@ -111,9 +98,7 @@ class AddContactFirstName:
         input_contact_firstname.send_keys(add_firstname)
         time.sleep(3)
 
-class AddContactLastName:
-    def __init__(self, driver):
-        self.driver = driver
+
 
     def contact_last_name(self, add_lastname):
         input_contact_firstname = WebDriverWait(self.driver, 20).until(
@@ -121,9 +106,7 @@ class AddContactLastName:
         input_contact_firstname.send_keys(add_lastname)
         time.sleep(3)
 
-class AddContactDOB:
-    def __init__(self, driver):
-        self.driver = driver
+
 
 
     def contact_date_of_birth(self, add_birthdate):
@@ -132,9 +115,7 @@ class AddContactDOB:
         input_contact_birthdate.send_keys(add_birthdate)
         time.sleep(3)
 
-class AddContactEmail:
-    def __init__(self, driver):
-        self.driver = driver
+
 
     def contact_email(self, add_email):
         input_contact_email = WebDriverWait(self.driver, 20).until(
@@ -142,9 +123,6 @@ class AddContactEmail:
         input_contact_email.send_keys(add_email)
         time.sleep(3)
 
-class AddContactPhone:
-    def __init__(self, driver):
-        self.driver = driver
 
     def contact_phone(self, add_phone):
         input_contact_phone = WebDriverWait(self.driver, 20).until(
@@ -152,9 +130,7 @@ class AddContactPhone:
         input_contact_phone.send_keys(add_phone)
         time.sleep(3)
 
-class AddContactAddress1:
-    def __init__(self, driver):
-        self.driver = driver
+
 
     def contact_address1(self, add_address1):
         input_contact_address1 = WebDriverWait(self.driver, 20).until(
@@ -162,9 +138,6 @@ class AddContactAddress1:
         input_contact_address1.send_keys(add_address1)
         time.sleep(3)
 
-class AddContactAddress2:
-    def __init__(self, driver):
-        self.driver = driver
 
     def contact_address2(self, add_address2):
         input_contact_address2 = WebDriverWait(self.driver, 20).until(
@@ -173,9 +146,7 @@ class AddContactAddress2:
         time.sleep(3)
 
 
-class AddContactCity:
-    def __init__(self, driver):
-        self.driver = driver
+
 
     def contact_city(self, add_city):
         input_contact_city = WebDriverWait(self.driver, 20).until(
@@ -183,9 +154,7 @@ class AddContactCity:
         input_contact_city.send_keys(add_city)
         time.sleep(3)
 
-class AddContactState:
-    def __init__(self, driver):
-        self.driver = driver
+
 
     def contact_state(self, add_state):
         input_contact_city = WebDriverWait(self.driver, 20).until(
@@ -193,9 +162,6 @@ class AddContactState:
         input_contact_city.send_keys(add_state)
         time.sleep(3)
 
-class AddContactPostalCode:
-    def __init__(self, driver):
-        self.driver = driver
 
     def contact_postal_code(self, add_postalcode):
         input_contact_postalcode = WebDriverWait(self.driver, 20).until(
@@ -203,9 +169,7 @@ class AddContactPostalCode:
         input_contact_postalcode.send_keys(add_postalcode)
         time.sleep(3)
 
-class AddContactCountry:
-    def __init__(self, driver):
-        self.driver = driver
+
 
     def contact_country(self, add_country):
         input_contact_country = WebDriverWait(self.driver, 20).until(
@@ -213,9 +177,7 @@ class AddContactCountry:
         input_contact_country.send_keys(add_country)
         time.sleep(3)
 
-class CLickSubmitButton:
-    def __init__(self, driver):
-        self.driver = driver
+
 
     def click_submit_button(self):
         click_submit_button = WebDriverWait(self.driver, 20).until(
