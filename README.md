@@ -19,7 +19,6 @@ User Registration
 Contact Management (Add 10+ contacts as per BRD)
 Cross-browser Testing (Chrome, Firefox, Edge)
 Responsive Design Validation
-Automated Regression Testing
 
 
 
