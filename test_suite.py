@@ -22,17 +22,16 @@ from Config.config import Config
 
 @pytest.fixture(scope="module")
 def driver_setup():
-    # Uncomment the browser you want to use
 
     # Chrome
-    # chrome_options = Options()
-    # chrome_options.add_argument("--headless")  # Run Chrome in headless mode
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")  # Run Chrome in headless mode
     # chrome_options.add_argument("--disable-gpu")
-    # driver = webdriver.Chrome(options=chrome_options)
+    driver = webdriver.Chrome(options=chrome_options)
 
-    # Firefox
-    firefox_options = FirefoxOptions()
-    driver = webdriver.Firefox(options=firefox_options)
+    # # Firefox
+    # firefox_options = FirefoxOptions()
+    # driver = webdriver.Firefox(options=firefox_options)
 
     # # Edge
     # edge_options = EdgeOptions()
