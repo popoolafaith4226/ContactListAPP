@@ -28,7 +28,7 @@ def driver_setup():
     chrome_options.add_argument("--headless")  # Run Chrome in headless mode
     # chrome_options.add_argument("--disable-gpu")
     driver = webdriver.Chrome(options=chrome_options)
-
+    #
     # # Firefox
     # firefox_options = FirefoxOptions()
     # driver = webdriver.Firefox(options=firefox_options)
@@ -194,7 +194,7 @@ def test_complete_contact_flow(signup, iteration):
     the_submit_button = AddContactButton(signup.driver)
     the_submit_button.click_submit_button()
 
-
+# login
 def test_logout_button(signup):
     the_logout_button = LogOutButton(signup.driver)
     the_logout_button.click_logout_button()

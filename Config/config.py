@@ -4,7 +4,7 @@ class Config:
     LOGIN_PASSWORD = "Abcd1234#"
     FIRSTNAME = "JOHN"
     LASTNAME = "HASSAN"
-    EMAIL = "jamesg22@sharklasers.com"
+    EMAIL = "james1122@sharklasers.com"
     PASSWORD = "Abcd1234#"
     CONTACT_FIRSTNAME = "James"
     CONTACT_LASTNAME = "Bolton"
