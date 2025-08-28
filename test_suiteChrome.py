@@ -15,8 +15,8 @@ def driver_setup():
 
     # Chrome
     chrome_options = Options()
-    # chrome_options.add_argument("--headless")  # Run Chrome in headless mode
-    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--headless")  # Run Chrome in headless mode
+    # chrome_options.add_argument("--disable-gpu")
     driver = webdriver.Chrome(options=chrome_options)
 
 
